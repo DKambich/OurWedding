@@ -942,14 +942,14 @@ form label {
   display: inline-block;
   width: 100px;
   height: 100px;
-  background: rgba(241, 78, 149, 0.8);
+  background: rgba(206, 155, 216, 0.8);
   margin: 0 4px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   border-radius: 50%;
   position: relative;
-  animation: pulse 1s ease infinite;
+  /* animation: pulse 1s ease infinite; */
 }
 
 @keyframes pulse {
@@ -1838,6 +1838,10 @@ form label {
 
 .js .animate-box {
   opacity: 0;
+}
+
+#fh5co-links>li {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
