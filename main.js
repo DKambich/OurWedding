@@ -186,7 +186,10 @@
     $(window).on("scroll", function () {
       // If the window scrolls past the first section, toggle visbility of the button
       var $win = $(window);
-      if ($win.scrollTop() > $("#fh5co-couple").scrollTop() + $("#fh5co-couple")[0].scrollHeight) {
+      if (
+        $win.scrollTop() >
+        $("#fh5co-couple").scrollTop() + $("#fh5co-couple")[0].scrollHeight
+      ) {
         $(".gototop").addClass("active");
       } else {
         $(".gototop").removeClass("active");
@@ -194,9 +197,10 @@
     });
   };
 
-  // Loading page
-  var loaderPage = function () {
-    $(".fh5co-loader").fadeOut("slow");
+  // Setup the PageLoader animator
+  const pageLoader = function () {
+    // Fade the page loader out 
+    $(".page-cover").fadeOut("slow");
   };
 
   var counter = function () {
@@ -242,7 +246,7 @@
     dropdown();
     testimonialCarousel();
     goToTop();
-    loaderPage();
+    pageLoader();
     counter();
     counterWayPoint();
   });
