@@ -973,6 +973,7 @@ form label {
   -ms-border-radius: 50%;
   border-radius: 50%;
   position: relative;
+  /* TODO: Decide if we want these to pulse */
   /* animation: pulse 1s ease infinite; */
 }
 

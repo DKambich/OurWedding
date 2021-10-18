@@ -199,24 +199,36 @@
 
   // Setup the PageLoader animator
   const setupPageLoader = function () {
-    // Fade the page loader out 
+    // Fade the page loader out
     $(".page-cover").fadeOut("slow");
   };
 
-  var counter = function () {
-    $(".js-counter").countTo({
-      formatter: function (value, options) {
-        return value.toFixed(options.decimals);
-      },
+  const setupDateCounter = function () {
+    $(".date-countdown").simplyCountdown({
+      year: 2022,
+      month: 10,
+      day: 17,
+      enableUtc: false,
     });
+
+    // TODO: Determine if we want to have seconds displayed
+    // $(".simply-seconds-section").hide()
   };
+
+  const counter = function () {};
 
   var counterWayPoint = function () {
     if ($("#fh5co-counter").length > 0) {
       $("#fh5co-counter").waypoint(
         function (direction) {
           if (direction === "down" && !$(this.element).hasClass("animated")) {
-            setTimeout(counter, 400);
+            setTimeout(function () {
+              $(".js-counter").countTo({
+                formatter: function (value, options) {
+                  return value.toFixed(options.decimals);
+                },
+              });
+            }, 400);
             $(this.element).addClass("animated");
           }
         },
@@ -230,14 +242,8 @@
     $.stellar();
   };
 
-  $(".simply-countdown-one").simplyCountdown({
-    year: 2022,
-    month: 10,
-    day: 17,
-    enableUtc: false,
-  });
-
   $(function () {
+    console.log("HERE");
     mobileMenuOutsideClick();
     setupParallax();
     offcanvasMenu();
@@ -247,7 +253,7 @@
     testimonialCarousel();
     setupScrollToTop();
     setupPageLoader();
-    counter();
+    setupDateCounter();
     counterWayPoint();
   });
 })();
