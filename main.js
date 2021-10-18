@@ -46,13 +46,16 @@
     });
 
     // Mobile Menu click function
-    $("#fh5co-offcanvas>ul>li").click(function (event) {
+    $("#fh5co-offcanvas>ul>li").on("click", function (event) {
       $(".js-fh5co-nav-toggle").toggleClass("active");
       if ($("body").hasClass("overflow offcanvas")) {
         $("body").removeClass("overflow offcanvas");
       } else {
         $("body").addClass("overflow offcanvas");
       }
+      // Prevent the link from redirecting
+      event.preventDefault();
+      return false;
     });
 
     // Nav Menu click function
@@ -157,10 +160,11 @@
     });
   };
 
-  var goToTop = function () {
-    $(".js-gotop").on("click", function (event) {
-      event.preventDefault();
-
+  // Setup the GoToTop button
+  const goToTop = function () {
+    // Listen for when the GoToTop button is clicked
+    $(".gototop").on("click", function (event) {
+      // Animate to the top of the page when the button is clicked
       $("html, body").animate(
         {
           scrollTop: $("html").offset().top,
@@ -168,17 +172,24 @@
         500,
         "easeInOutExpo"
       );
+
+      // Set only the home navigation link to active
       $("#fh5co-links>li.active").removeClass("active");
       $(".fh5co-header-link").addClass("active");
+
+      // Prevent the link from redirecting
+      event.preventDefault();
       return false;
     });
 
-    $(window).scroll(function () {
+    // Listen to the window is scrolled, to toggle visibility of the GoToTop button
+    $(window).on("scroll", function () {
+      // If the window scrolls past the first section, toggle visbility of the button
       var $win = $(window);
-      if ($win.scrollTop() > 200) {
-        $(".js-top").addClass("active");
+      if ($win.scrollTop() > $("#fh5co-couple").scrollTop() + $("#fh5co-couple")[0].scrollHeight) {
+        $(".gototop").addClass("active");
       } else {
-        $(".js-top").removeClass("active");
+        $(".gototop").removeClass("active");
       }
     });
   };
@@ -193,13 +204,6 @@
       formatter: function (value, options) {
         return value.toFixed(options.decimals);
       },
-    });
-
-    $(".simply-countdown-one").simplyCountdown({
-      year: 2022,
-      month: 10,
-      day: 17,
-      enableUtc: false,
     });
   };
 
@@ -221,6 +225,13 @@
   var parallax = function () {
     $(window).stellar();
   };
+
+  $(".simply-countdown-one").simplyCountdown({
+    year: 2022,
+    month: 10,
+    day: 17,
+    enableUtc: false,
+  });
 
   $(function () {
     mobileMenuOutsideClick();

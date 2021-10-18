@@ -816,7 +816,6 @@ figure {
   left: 0;
   top: 0.05em;
   font-family: "icomoon";
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -1510,7 +1509,6 @@ form label {
   position: absolute;
   right: 0px;
   font-family: "icomoon";
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -1557,6 +1555,7 @@ form label {
   opacity: 1;
   visibility: visible;
 }
+
 .gototop a {
   width: 50px;
   height: 50px;
@@ -1574,6 +1573,11 @@ form label {
   display: table-cell;
   vertical-align: middle;
 }
+
+.gototop a:hover {
+  background: rgba(200, 200, 200, 0.5);
+}
+
 .gototop a:hover,
 .gototop a:active,
 .gototop a:focus {
@@ -1905,10 +1909,6 @@ form label {
 
 .js .animate-box {
   opacity: 0;
-}
-
-#fh5co-links > li {
-  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
