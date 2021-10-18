@@ -45,9 +45,18 @@
       }
     });
 
-    $(
-      ".fh5co-header-link, .fh5co-couple-story-link, .fh5co-started-link"
-    ).click(function (event) {
+	// Mobile Menu click function
+    $("#fh5co-offcanvas>ul>li").click(function (event) {
+      $(".js-fh5co-nav-toggle").toggleClass("active");
+      if ($("body").hasClass("overflow offcanvas")) {
+        $("body").removeClass("overflow offcanvas");
+      } else {
+        $("body").addClass("overflow offcanvas");
+      }
+    });
+
+	// Nav Menu click function
+    $("#fh5co-links>li").click(function (event) {
       $("#fh5co-links>li.active").removeClass("active");
       $("html, body").animate(
         {
