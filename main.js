@@ -45,7 +45,7 @@
       }
     });
 
-	// Mobile Menu click function
+    // Mobile Menu click function
     $("#fh5co-offcanvas>ul>li").click(function (event) {
       $(".js-fh5co-nav-toggle").toggleClass("active");
       if ($("body").hasClass("overflow offcanvas")) {
@@ -55,7 +55,7 @@
       }
     });
 
-	// Nav Menu click function
+    // Nav Menu click function
     $("#fh5co-links>li").click(function (event) {
       $("#fh5co-links>li.active").removeClass("active");
       $("html, body").animate(
@@ -193,6 +193,13 @@
       formatter: function (value, options) {
         return value.toFixed(options.decimals);
       },
+    });
+
+    $(".simply-countdown-one").simplyCountdown({
+      year: 2022,
+      month: 10,
+      day: 17,
+      enableUtc: false,
     });
   };
 
