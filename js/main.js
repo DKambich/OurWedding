@@ -108,10 +108,10 @@
 							}
 
 							el.removeClass('item-animate');
-						},  k * 200, 'easeInOutExpo' );
+						},  k * 50, 'easeInOutExpo' );
 					});
 					
-				}, 100);
+				},50);
 				
 			}
 
@@ -165,7 +165,8 @@
 			$('html, body').animate({
 				scrollTop: $('html').offset().top
 			}, 500, 'easeInOutExpo');
-			
+			$("#fh5co-links>li.active").removeClass("active");
+			$(".fh5co-header-link").addClass("active");
 			return false;
 		});
 

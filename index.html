@@ -83,10 +83,10 @@
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul id="fh5co-links">
-							<li id="fh5co-header-link" class="active">
+							<li class="active fh5co-header-link">
 								<a>Home</a>
 							</li>
-							<li id="fh5co-couple-story-link">
+							<li class="fh5co-couple-story-link">
 								<a>Story</a>
 							</li>
 							<!-- <li id="fh5co-rsvp-link">
@@ -95,7 +95,7 @@
 							<li id="gallery-link">
 								<a>Gallery</a>
 							</li> -->
-							<li id="fh5co-started-link">
+							<li class="fh5co-started-link">
 								<a>RSVP</a>
 							</li>
 						</ul>
@@ -116,6 +116,7 @@
 								<h1>Daniel &amp; Abigail</h1>
 								<h2>We Are Getting Married</h2>
 								<div class="simply-countdown simply-countdown-one"></div>
+								<!-- https://github.com/nwcell/ics.js -->
 								<p><a href="#" class="btn btn-default btn-sm">Save the date</a></p>
 							</div>
 						</div>
@@ -654,17 +655,17 @@
 	<script src="js/main.js"></script>
 
 	<script>
-			$('.simply-countdown-one').simplyCountdown({
+		$('.simply-countdown-one').simplyCountdown({
 			year: 2022,
 			month: 10,
 			day: 17,
 			enableUtc: false
 		});
 
-		$("#fh5co-header-link, #fh5co-couple-story-link, #fh5co-started-link").click(function (event) {
+		$(".fh5co-header-link, .fh5co-couple-story-link, .fh5co-started-link").click(function (event) {
 			$("#fh5co-links>li.active").removeClass("active")
-			event.currentTarget.classList = "active"
-			$('html, body').animate({ scrollTop: $(`#${event.currentTarget.id.replace("-link", "")}`).offset().top }, 'slow');
+			$('html, body').animate({ scrollTop: $(`#${event.currentTarget.className.replace("-link", "")}`).offset().top }, 'slow');
+			event.currentTarget.classList.add("active")
 
 		})
 
