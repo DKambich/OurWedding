@@ -160,10 +160,10 @@
     });
   };
 
-  // Setup the GoToTop button
-  const goToTop = function () {
-    // Listen for when the GoToTop button is clicked
-    $(".gototop").on("click", function (event) {
+  // Setup the ScrollToTop button
+  const setupScrollToTop = function () {
+    // Listen for when the ScrollToTop button is clicked
+    $(".scrolltotop").on("click", function (event) {
       // Animate to the top of the page when the button is clicked
       $("html, body").animate(
         {
@@ -182,7 +182,7 @@
       return false;
     });
 
-    // Listen to the window is scrolled, to toggle visibility of the GoToTop button
+    // Listen to the window is scrolled, to toggle visibility of the ScrollToTop button
     $(window).on("scroll", function () {
       // If the window scrolls past the first section, toggle visbility of the button
       var $win = $(window);
@@ -190,15 +190,15 @@
         $win.scrollTop() >
         $("#fh5co-couple").scrollTop() + $("#fh5co-couple")[0].scrollHeight
       ) {
-        $(".gototop").addClass("active");
+        $(".scrolltotop").addClass("active");
       } else {
-        $(".gototop").removeClass("active");
+        $(".scrolltotop").removeClass("active");
       }
     });
   };
 
   // Setup the PageLoader animator
-  const pageLoader = function () {
+  const setupPageLoader = function () {
     // Fade the page loader out 
     $(".page-cover").fadeOut("slow");
   };
@@ -225,9 +225,9 @@
     }
   };
 
-  // Parallax
-  var parallax = function () {
-    $(window).stellar();
+  // Activate the parallax effect with Stellar (add data-stellar-background-ratio="#.#" on a div to use effect)
+  const setupParallax = function () {
+    $.stellar();
   };
 
   $(".simply-countdown-one").simplyCountdown({
@@ -239,14 +239,14 @@
 
   $(function () {
     mobileMenuOutsideClick();
-    parallax();
+    setupParallax();
     offcanvasMenu();
     burgerMenu();
     contentWayPoint();
     dropdown();
     testimonialCarousel();
-    goToTop();
-    pageLoader();
+    setupScrollToTop();
+    setupPageLoader();
     counter();
     counterWayPoint();
   });
