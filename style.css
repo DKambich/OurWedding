@@ -1056,6 +1056,64 @@ form label {
   }
 }
 
+.add-guest {
+  width: 48px;
+  height: 48px;
+  font-size: 20px;
+  background: #fff;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.add-guest:hover {
+  background: #ddd;
+}
+
+.add-guest i {
+  color: var(--lavendar);
+}
+
+.guest-field-ctr {
+  display: flex !important;
+  align-items: center;
+}
+
+.guest-field {
+  flex: 1;
+}
+
+.remove-guest {
+  width: 24px;
+  height: 24px;
+  font-size: 12px;
+  background: #fff;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  margin: 0px 12px 0px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.remove-guest:hover {
+  background: #ddd;
+}
+
+.remove-guest i {
+  color: darkred;
+}
+
 .heart {
   position: absolute;
   top: 4em;

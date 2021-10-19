@@ -215,6 +215,25 @@
     // $(".simply-seconds-section").hide()
   };
 
+  const setupRSVPForm = function () {
+    $(".add-guest").on("click", function () {
+      const numberGuests = $("#guest-list").children().length + 2;
+      console.log(numberGuests);
+      $("#guest-list").append(`
+      <div id="guest${numberGuests}ctr" class="guest-field-ctr form-group">
+        <label for="email" class="sr-only">Guest #${numberGuests}</label>
+        <input class="form-control guest-field " id="guest${numberGuests}" placeholder="Guest #${numberGuests}">
+        <div id="guest${numberGuests}btn" class="remove-guest">
+          <i class="icon-minus"></i>
+        </div>
+      </div>`);
+
+      $(`#guest${numberGuests}btn`).on("click", function () {
+        $(`#guest${numberGuests}ctr`).remove();
+      });
+    });
+  };
+
   const counter = function () {};
 
   var counterWayPoint = function () {
@@ -254,6 +273,7 @@
     setupScrollToTop();
     setupPageLoader();
     setupDateCounter();
+    setupRSVPForm();
     counterWayPoint();
   });
 })();
