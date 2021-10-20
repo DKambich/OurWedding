@@ -264,25 +264,6 @@
     });
   };
 
-  var counterWayPoint = function () {
-    if ($("#fh5co-counter").length > 0) {
-      $("#fh5co-counter").waypoint(
-        function (direction) {
-          if (direction === "down" && !$(this.element).hasClass("animated")) {
-            setTimeout(function () {
-              $(".js-counter").countTo({
-                formatter: function (value, options) {
-                  return value.toFixed(options.decimals);
-                },
-              });
-            }, 400);
-            $(this.element).addClass("animated");
-          }
-        },
-        { offset: "90%" }
-      );
-    }
-  };
 
   // Activate the parallax effect with Stellar (add data-stellar-background-ratio="#.#" on a div to use effect)
   const setupParallax = function () {
@@ -301,6 +282,5 @@
     setupPageLoader();
     setupDateCounter();
     setupRSVPForm();
-    counterWayPoint();
   });
 })();
