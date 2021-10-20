@@ -1057,7 +1057,6 @@ form label {
 }
 
 .add-guest {
-  width: 48px;
   height: 48px;
   font-size: 20px;
   background: #fff;
@@ -1081,8 +1080,9 @@ form label {
 }
 
 .guest-field-ctr {
-  display: flex !important;
+  display: flex;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .guest-field {
@@ -1112,6 +1112,20 @@ form label {
 
 .remove-guest i {
   color: darkred;
+}
+
+.add-guest-ctr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.divider {
+  height: 2px;
+  flex: 1;
+  background-color: white;
+  margin: 0 8px 0 8px;
+  border-radius: 25%;
 }
 
 .heart {
@@ -1462,24 +1476,16 @@ form label {
 #fh5co-started .form-control:focus {
   background: rgba(255, 255, 255, 0.3);
 }
-#fh5co-started .btn {
-  height: 54px;
-  border: none !important;
-  background: var(--lavendar);
-  color: #fff;
-  font-size: 16px;
-  text-transform: uppercase;
-  font-weight: 400;
-  padding-left: 50px;
-  padding-right: 50px;
-}
+
 #fh5co-started .form-inline .form-group {
   width: 100% !important;
   margin-bottom: 10px;
 }
+
 #fh5co-started .form-inline .form-group .form-control {
   width: 100%;
 }
+
 #fh5co-started .fh5co-heading {
   margin-bottom: 30px;
 }
@@ -1764,12 +1770,27 @@ form label {
   transition: 0.5s;
   padding: 8px 20px;
 }
+
+/* .btn {
+  height: 54px;
+  border: none !important;
+  background: var(--lavendar);
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding-left: 50px;
+  padding-right: 50px;
+} */
+
 .btn.btn-md {
   padding: 8px 20px !important;
 }
+
 .btn.btn-lg {
   padding: 18px 36px !important;
 }
+
 .btn:hover,
 .btn:active,
 .btn:focus {
@@ -1782,22 +1803,40 @@ form label {
   color: #fff;
   border: 2px solid var(--lavendar);
 }
+
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active {
-  background: #f366a3 !important;
-  border-color: #f366a3 !important;
+  color: var(--lavendar);
+  background: #fff !important;
+  border-color: #fff !important;
 }
+
 .btn-primary.btn-outline {
   background: transparent;
   color: var(--lavendar);
   border: 2px solid var(--lavendar);
 }
+
 .btn-primary.btn-outline:hover,
 .btn-primary.btn-outline:focus,
 .btn-primary.btn-outline:active {
   background: var(--lavendar);
   color: #fff;
+}
+
+.btn-secondary {
+  background: #fff;
+  color: var(--lavendar);
+  border: 2px solid #fff;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active {
+  color: var(--lavendar);
+  background: #eee !important;
+  border-color: #eee !important;
 }
 
 .btn-success {
@@ -1994,5 +2033,8 @@ form label {
     transform: rotate(360deg);
   }
 }
+
+/* Checkbox styling */
+
 
 /*# sourceMappingURL=style.css.map */

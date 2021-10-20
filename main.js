@@ -211,30 +211,58 @@
       enableUtc: false,
     });
 
-    // TODO: Determine if we want to have seconds displayed
-    // $(".simply-seconds-section").hide()
+    // Hide the seconds field
+    $(".simply-seconds-section").hide();
   };
 
   const setupRSVPForm = function () {
-    $(".add-guest").on("click", function () {
+    function renumberGuests() {
+      $("#guest-list>div").each(function (index, child) {
+        // Set the correct guest number
+        const number = index + 2;
+        // Update the id of the guest container
+        $(child).prop("id", `guest-${number}-ctr`);
+        // Get the container children
+        const ctrChildren = $(child).children();
+        // Update the label of the field
+        $(ctrChildren[0]).innerHTML = `Guest #${number}`;
+        // Update the text and id of the textbox
+        $(ctrChildren[1]).prop("placeholder", `Guest #${number}`);
+        $(ctrChildren[1]).prop("id", `guest-${number}`);
+        // Update the id of the button
+        $(ctrChildren[2]).prop("id", `guest-${number}-btn`);
+      });
+    }
+
+    $("#add-guest").on("click", function () {
+      // Get the number of guests currently added
       const numberGuests = $("#guest-list").children().length + 2;
-      console.log(numberGuests);
-      $("#guest-list").append(`
-      <div id="guest${numberGuests}ctr" class="guest-field-ctr form-group">
+
+      // Add a new guest form field
+      $("#guest-list").append(
+        `
+      <div id="guest-${numberGuests}-ctr" class="guest-field-ctr ">
         <label for="email" class="sr-only">Guest #${numberGuests}</label>
-        <input class="form-control guest-field " id="guest${numberGuests}" placeholder="Guest #${numberGuests}">
-        <div id="guest${numberGuests}btn" class="remove-guest">
+        <input type="name" class="form-control guest-field" id="guest-${numberGuests}" placeholder="Guest #${numberGuests}">
+        <div id="guest-${numberGuests}-btn" class="remove-guest">
           <i class="icon-minus"></i>
         </div>
-      </div>`);
+      </div>`
+      );
 
-      $(`#guest${numberGuests}btn`).on("click", function () {
-        $(`#guest${numberGuests}ctr`).remove();
+      // Transition the guest field in
+      $("#guest-list").children().last().hide().slideDown();
+
+      // Remove the form field when clicking on the button
+      $(`#guest-${numberGuests}-btn`).on("click", function (event) {
+        const parent = $(event.currentTarget).parent();
+        parent.slideUp(400, function () {
+          parent.remove();
+          renumberGuests();
+        });
       });
     });
   };
-
-  const counter = function () {};
 
   var counterWayPoint = function () {
     if ($("#fh5co-counter").length > 0) {
@@ -262,7 +290,6 @@
   };
 
   $(function () {
-    console.log("HERE");
     mobileMenuOutsideClick();
     setupParallax();
     offcanvasMenu();

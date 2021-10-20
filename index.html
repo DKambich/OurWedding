@@ -583,31 +583,45 @@
 				<div class="row animate-box">
 					<div class="col-md-10 col-md-offset-1">
 						<form class="form-inline">
+
+							<!-- Guest 1 Name Field -->
 							<div class="col-md-6 col-sm-6">
 								<div class="form-group">
-									<label for="name" class="sr-only">Name</label>
-									<input type="name" class="form-control" id="name" placeholder="Name">
+									<label for="name" class="sr-only">Guest #1</label>
+									<input type="name" class="form-control" id="guest1" placeholder="Guest #1">
 								</div>
 							</div>
+
+							<!-- Contact Email Field -->
 							<div class="col-md-6 col-sm-6">
 								<div class="form-group">
 									<label for="email" class="sr-only">Email</label>
 									<input type="email" class="form-control" id="email" placeholder="Email">
 								</div>
 							</div>
-							<div id="guest-list" class="col-md-12 col-sm-4">
 
-							</div>
-							<div class="col-md-12 col-sm-4">
-								<div class="form-group ">
-									<div class="add-guest">
-										<i class="icon-plus"></i>
-									</div>
+							<!-- Code Field -->
+							<div class="col-md-6 col-sm-6">
+								<div class="form-group">
+									<label for="code" class="sr-only">Secret Code</label>
+									<input type="text" class="form-control" id="code" placeholder="Secret Code">
 								</div>
-
 							</div>
-							<div class="col-md-4 col-sm-4">
-								<button type="submit" class="btn btn-default btn-block">Send RSVP</button>
+
+							<!-- Div to hold the list of guest button -->
+							<div id="guest-list" class="col-md-12 col-sm-4"> </div>
+							<!-- Div to hold the add guest button -->
+							<div class="col-md-12 col-sm-4">
+								<div class="add-guest-ctr">
+									<div class="divider"> </div>
+									<button type="button" id="add-guest" class="btn btn-secondary">Add Guest</button>
+									<div class="divider"> </div>
+								</div>
+							</div>
+							<!-- Div to hold the submit RSVP button -->
+
+							<div class=" col-md-4 col-sm-4">
+								<button type="submit" class="btn btn-primary btn-block ">Send RSVP</button>
 							</div>
 						</form>
 					</div>
