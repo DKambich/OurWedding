@@ -88,19 +88,13 @@
 					<div class="col-xs-10 text-right menu-1">
 						<ul id="fh5co-links">
 							<li class="active fh5co-header-link">
-								<a href="#">Home</a>
+								<a href="#fh5co-header">Home</a>
 							</li>
 							<li class="fh5co-couple-story-link">
-								<a href="#fh5co-couple">Story</a>
+								<a href="#fh5co-couple-story">Story</a>
 							</li>
-							<!-- <li id="fh5co-rsvp-link">
-								<a>Services</a>
-							</li>
-							<li id="gallery-link">
-								<a>Gallery</a>
-							</li> -->
 							<li class="fh5co-started-link">
-								<a href="#">RSVP</a>
+								<a href="#fh5co-started">RSVP</a>
 							</li>
 						</ul>
 					</div>
@@ -144,7 +138,7 @@
 							<img src="images/groom.jpg" alt="groom" class="img-responsive">
 						</div>
 						<div class="desc-groom">
-							<h3>Joefrey Mahusay</h3>
+							<h3>Daniel Kambich</h3>
 							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
 								there live the blind texts. Separated they live in Bookmarksgrove</p>
 						</div>
@@ -155,7 +149,7 @@
 							<img src="images/bride.jpg" alt="groom" class="img-responsive">
 						</div>
 						<div class="desc-bride">
-							<h3>Sheila Mahusay</h3>
+							<h3>Abigail McKinney</h3>
 							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
 								there live the blind texts. Separated they live in Bookmarksgrove</p>
 						</div>
@@ -527,13 +521,7 @@
 					<div class="col-md-10 col-md-offset-1">
 						<form class="form-inline">
 
-							<!-- Guest 1 Name Field -->
-							<div class="col-md-6 col-sm-6">
-								<div class="form-group">
-									<label for="name" class="sr-only">Guest #1</label>
-									<input type="name" class="form-control" id="guest1" placeholder="Guest #1">
-								</div>
-							</div>
+
 
 							<!-- Contact Email Field -->
 							<div class="col-md-6 col-sm-6">
@@ -550,11 +538,19 @@
 									<input type="text" class="form-control" id="code" placeholder="Secret Code">
 								</div>
 							</div>
+							
+							<!-- Guest 1 Name Field -->
+							<div class="col-md-12 col-sm-12">
+								<div class="form-group">
+									<label for="name" class="sr-only">Guest #1</label>
+									<input type="name" class="form-control" id="guest1" placeholder="Guest #1">
+								</div>
+							</div>
 
 							<!-- Div to hold the list of guest button -->
-							<div id="guest-list" class="col-md-12 col-sm-4"> </div>
+							<div id="guest-list" class="col-md-12 col-sm-12"> </div>
 							<!-- Div to hold the add guest button -->
-							<div class="col-md-12 col-sm-4">
+							<div class="col-md-12 col-sm-12">
 								<div class="add-guest-ctr">
 									<div class="divider"> </div>
 									<button type="button" id="add-guest" class="btn btn-secondary">Add Guest</button>
@@ -563,7 +559,7 @@
 							</div>
 							<!-- Div to hold the submit RSVP button -->
 
-							<div class=" col-md-4 col-sm-4">
+							<div class=" col-md-12 col-sm-12">
 								<button type="submit" class="btn btn-primary btn-block ">Send RSVP</button>
 							</div>
 						</form>
