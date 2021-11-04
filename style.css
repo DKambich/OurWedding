@@ -9,6 +9,11 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "apricots";
+  src: url("./fonts/apricots-regular.woff") format('woff');
+}
 /* =======================================================
 *
 * 	Template Style 
@@ -121,7 +126,7 @@ figure {
   margin: 0;
   padding: 0;
   line-height: 40px;
-  font-family: "Sacramento", Arial, serif;
+  font-family: "apricots", Arial, serif;
 }
 .fh5co-nav a {
   padding: 5px 10px;
@@ -839,7 +844,7 @@ form label {
   margin-bottom: 0px;
   font-size: 100px;
   line-height: 1.5;
-  font-family: "Sacramento", Arial, serif;
+  font-family: "apricots", Arial, serif;
 }
 @media screen and (max-width: 768px) {
   #fh5co-header .display-tc h1,
@@ -1041,6 +1046,7 @@ form label {
 }
 
 .add-guest-ctr {
+  margin: 8px 0 8px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1088,7 +1094,7 @@ form label {
   }
 }
 .couple-half h3 {
-  font-family: "Sacramento", Arial, serif;
+  font-family: "apricots", Arial, serif;
   color: var(--lavendar);
   font-size: 30px;
 }
@@ -1211,7 +1217,7 @@ form label {
   line-height: 1.5;
   font-weight: bold;
   color: var(--lavendar);
-  font-family: "Sacramento", Arial, serif;
+  font-family: "apricots", Arial, serif;
 }
 @media screen and (max-width: 768px) {
   .fh5co-heading h2 {
