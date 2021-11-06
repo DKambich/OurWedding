@@ -12,7 +12,7 @@
 
 @font-face {
   font-family: "apricots";
-  src: url("./fonts/apricots-regular.woff") format('woff');
+  src: url("./fonts/apricots-regular.woff") format("woff");
 }
 /* =======================================================
 *
@@ -21,7 +21,8 @@
 * ======================================================= */
 
 :root {
-  --lavendar: #a57bb6;
+  --primaryPurple: #492c45;
+  --secondaryPurple: #d0c3f1;
   --white: #ffffff;
 }
 
@@ -62,7 +63,7 @@ body {
 }
 
 a {
-  color: var(--lavendar);
+  color: var(--primaryPurple);
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -70,7 +71,7 @@ a {
 a:hover,
 a:active,
 a:focus {
-  color: var(--lavendar);
+  color: var(--primaryPurple);
   outline: none;
   text-decoration: none;
 }
@@ -94,17 +95,17 @@ figure {
 
 ::-webkit-selection {
   color: #fff;
-  background: var(--lavendar);
+  background: var(--primaryPurple);
 }
 
 ::-moz-selection {
   color: #fff;
-  background: var(--lavendar);
+  background: var(--primaryPurple);
 }
 
 ::selection {
   color: #fff;
-  background: var(--lavendar);
+  background: var(--primaryPurple);
 }
 
 .fh5co-nav {
@@ -223,7 +224,7 @@ figure {
   color: #fff;
 }
 .fh5co-nav ul li.btn-cta a {
-  color: var(--lavendar);
+  color: var(--primaryPurple);
 }
 .fh5co-nav ul li.btn-cta a span {
   background: #fff;
@@ -772,7 +773,7 @@ figure {
   display: inline-block;
   zoom: 1;
   *display: inline;
-  color: var(--lavendar);
+  color: var(--primaryPurple);
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -791,7 +792,7 @@ figure {
   position: relative;
 }
 .fh5co-contact-info ul li:before {
-  color: var(--lavendar);
+  color: var(--primaryPurple);
   position: absolute;
   left: 0;
   top: 0.05em;
@@ -874,7 +875,7 @@ form label {
 .fh5co-cover .display-tc .btn {
   padding: 15px 20px;
   background: #fff !important;
-  color: var(--lavendar);
+  color: var(--primaryPurple);
   border: none !important;
   font-size: 14px;
   text-transform: uppercase;
@@ -897,7 +898,7 @@ form label {
   display: inline-block;
   width: 100px;
   height: 100px;
-  background: var(--lavendar);
+  background: var(--primaryPurple);
   margin: 0 4px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -1007,7 +1008,7 @@ form label {
 }
 
 .add-guest i {
-  color: var(--lavendar);
+  color: var(--primaryPurple);
 }
 
 .guest-field-ctr {
@@ -1072,7 +1073,7 @@ form label {
   font-size: 20px;
   background: #fff;
   padding: 20px;
-  color: var(--lavendar);
+  color: var(--primaryPurple);
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
@@ -1095,7 +1096,7 @@ form label {
 }
 .couple-half h3 {
   font-family: "apricots", Arial, serif;
-  color: var(--lavendar);
+  color: var(--primaryPurple);
   font-size: 30px;
 }
 .couple-half .groom,
@@ -1193,7 +1194,7 @@ form label {
   height: 90px;
   font-size: 40px;
   line-height: 40px;
-  color: var(--lavendar);
+  color: var(--primaryPurple);
 }
 .feature-center p,
 .feature-center h3 {
@@ -1216,7 +1217,7 @@ form label {
   margin-bottom: 10px;
   line-height: 1.5;
   font-weight: bold;
-  color: var(--lavendar);
+  color: var(--primaryPurple);
   font-family: "apricots", Arial, serif;
 }
 @media screen and (max-width: 768px) {
@@ -1251,7 +1252,7 @@ form label {
   display: block;
 }
 #fh5co-testimonial .wrap-testimony .testimony-slide span a.twitter {
-  color: var(--lavendar);
+  color: var(--primaryPurple);
   font-weight: 300;
 }
 #fh5co-testimonial .wrap-testimony .testimony-slide figure {
@@ -1345,7 +1346,7 @@ form label {
   display: table-cell;
   vertical-align: middle;
   font-size: 30px;
-  color: var(--lavendar);
+  color: var(--primaryPurple);
 }
 .feature-left .feature-copy {
   float: left;
@@ -1449,7 +1450,7 @@ form label {
 }
 .owl-carousel .owl-controls .owl-dot.active span {
   background: transparent;
-  border: 2px solid var(--lavendar);
+  border: 2px solid var(--primaryPurple);
 }
 
 #fh5co-offcanvas {
@@ -1706,7 +1707,7 @@ form label {
 /* .btn {
   height: 54px;
   border: none !important;
-  background: var(--lavendar);
+  background: var(--primaryPurple);
   color: #fff;
   font-size: 16px;
   text-transform: uppercase;
@@ -1731,42 +1732,42 @@ form label {
 }
 
 .btn-primary {
-  background: var(--lavendar);
+  background: var(--primaryPurple);
   color: #fff;
-  border: 2px solid var(--lavendar);
+  border: 2px solid var(--primaryPurple);
 }
 
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active {
-  color: var(--lavendar);
+  color: var(--primaryPurple);
   background: #fff !important;
   border-color: #fff !important;
 }
 
 .btn-primary.btn-outline {
   background: transparent;
-  color: var(--lavendar);
-  border: 2px solid var(--lavendar);
+  color: var(--primaryPurple);
+  border: 2px solid var(--primaryPurple);
 }
 
 .btn-primary.btn-outline:hover,
 .btn-primary.btn-outline:focus,
 .btn-primary.btn-outline:active {
-  background: var(--lavendar);
+  background: var(--primaryPurple);
   color: #fff;
 }
 
 .btn-secondary {
   background: #fff;
-  color: var(--lavendar);
+  color: var(--primaryPurple);
   border: 2px solid #fff;
 }
 
 .btn-secondary:hover,
 .btn-secondary:focus,
 .btn-secondary:active {
-  color: var(--lavendar);
+  color: var(--primaryPurple);
   background: #eee !important;
   border-color: #eee !important;
 }
@@ -1916,7 +1917,7 @@ form label {
 .form-control:focus {
   outline: none;
   box-shadow: none;
-  border-color: var(--lavendar);
+  border-color: var(--primaryPurple);
 }
 
 .row-pb-md {
@@ -1945,7 +1946,7 @@ form label {
 
 .page-loader {
   border: 8px solid #f3f3f3;
-  border-top: 8px solid var(--lavendar);
+  border-top: 8px solid var(--primaryPurple);
   margin: -40px 0 0 -40px;
   border-radius: 50%;
   width: 80px;
