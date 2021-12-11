@@ -12,7 +12,9 @@
 
 @font-face {
   font-family: "apricots";
-  src: url("fonts/apricots-regular.woff") format("woff");
+  src: url("fonts/apricots/apricots.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 /* =======================================================
 *
