@@ -206,7 +206,7 @@
   const setupDateCounter = function () {
     $(".date-countdown").simplyCountdown({
       year: 2022,
-      month: 10,
+      month: 9,
       day: 17,
       enableUtc: false,
     });
