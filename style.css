@@ -1,8 +1,7 @@
 @font-face {
   font-family: "icomoon";
   src: url("fonts/icomoon/icomoon.eot?srf3rx");
-  src: url("fonts/icomoon/icomoon.eot?srf3rx#iefix")
-      format("embedded-opentype"),
+  src: url("fonts/icomoon/icomoon.eot?srf3rx#iefix") format("embedded-opentype"),
     url("fonts/icomoon/icomoon.ttf?srf3rx") format("truetype"),
     url("fonts/icomoon/icomoon.woff?srf3rx") format("woff"),
     url("fonts/icomoon/icomoon.svg?srf3rx#icomoon") format("svg");
@@ -1134,20 +1133,20 @@ form label {
   }
 }
 .couple-half .groom {
-  float: right;
-  margin-right: 5px;
-}
-.couple-half .bride {
   float: left;
   margin-left: 5px;
 }
-.couple-half .desc-groom {
-  padding-right: 180px;
-  text-align: right;
+.couple-half .bride {
+  float: right;
+  margin-right: 5px;
 }
-.couple-half .desc-bride {
+.couple-half .desc-groom {
   padding-left: 180px;
   text-align: left;
+}
+.couple-half .desc-bride {
+  padding-right: 180px;
+  text-align: right;
 }
 @media screen and (max-width: 480px) {
   .couple-half .groom,
@@ -1973,5 +1972,8 @@ form label {
   margin: 0;
 }
 
-/* Checkbox styling */
+#rsvp-submit {
+  margin-top: 16px;
+}
 
+/* Checkbox styling */
