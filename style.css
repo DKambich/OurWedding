@@ -21,7 +21,7 @@
 @font-face {
   font-family: "quicksand";
   src: url("fonts/apricots/quicksand.woff") format("woff"),
-   url("fonts/apricots/quicksand.ttf") format("truetype");
+    url("fonts/apricots/quicksand.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-weight: 900;
@@ -2006,4 +2006,93 @@ form label {
 .desc-groom > h6 {
   margin-bottom: 0;
   font-style: italic;
+}
+
+/* Bridesmaid CSS */
+
+.desc-bridemaid h3 {
+  font-family: "apricots", Arial, serif;
+  color: var(--primaryPurple);
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.desc-bridemaid h5 {
+  font-family: "quicksand", Arial, serif;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.bridesmaid-photo-ctr {
+  display: flex;
+  justify-content: end;
+
+  align-items: center;
+}
+
+.bridesmaid-photo-ctr > img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .bridesmaid-photo-ctr {
+    justify-content: center;
+  }
+}
+
+/* Groomsmen CSS */
+
+@media screen and (max-width: 768px) {
+  .hide-mobile{
+    display: none;
+  }
+}
+
+.hide-desktop {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .hide-desktop{
+    display: block;
+  }
+}
+
+.desc-groomsmen {
+  text-align: right;
+}
+
+.desc-groomsmen h3 {
+  font-family: "apricots", Arial, serif;
+  color: var(--primaryPurple);
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.desc-groomsmen h5 {
+  font-family: "quicksand", Arial, serif;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.groomsmen-photo-ctr {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.groomsmen-photo-ctr > img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .groomsmen-photo-ctr {
+    justify-content: center;
+  }
 }
