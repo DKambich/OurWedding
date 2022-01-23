@@ -67,7 +67,7 @@
             `#${event.currentTarget.className.replace("-link", "")}`
           ).offset().top,
         },
-        "slow"
+        "easeInOutExpo"
       );
       event.currentTarget.classList.add("active");
     });
@@ -186,10 +186,7 @@
     $(window).on("scroll", function () {
       // If the window scrolls past the first section, toggle visbility of the button
       var $win = $(window);
-      if (
-        $win.scrollTop() >
-        $("#fh5co-couple").scrollTop() + $("#fh5co-couple")[0].scrollHeight
-      ) {
+      if ($win.scrollTop() >= $("#fh5co-header")[0].scrollHeight) {
         $(".scrolltotop").addClass("active");
       } else {
         $(".scrolltotop").removeClass("active");
@@ -263,7 +260,6 @@
       });
     });
   };
-
 
   // Activate the parallax effect with Stellar (add data-stellar-background-ratio="#.#" on a div to use effect)
   const setupParallax = function () {
