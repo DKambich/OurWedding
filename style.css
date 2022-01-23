@@ -882,7 +882,7 @@ form label {
 #fh5co-header .display-tc .btn,
 .fh5co-cover .display-tc .btn {
   padding: 15px 20px;
-  background: #fff !important;
+  background: #FFFFFF33;
   color: var(--primaryPurple);
   border: none !important;
   font-size: 14px;
@@ -906,7 +906,7 @@ form label {
   display: inline-block;
   width: 100px;
   height: 100px;
-  background: var(--primaryPurple);
+  background: #492c4599;
   margin: 0 4px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -939,7 +939,7 @@ form label {
 .simply-countdown > .simply-section .simply-amount,
 .simply-countdown > .simply-section .simply-word {
   display: block;
-  color: white;
+  color: #FFFFFFBB;
   /* amounts and words */
 }
 
