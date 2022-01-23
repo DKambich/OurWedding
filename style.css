@@ -963,6 +963,7 @@ form label {
 #fh5co-couple-story,
 #fh5co-couple,
 #fh5co-gallery,
+#fh5co-faq,
 .fh5co-section {
   padding: 7em 0;
   clear: both;
@@ -976,6 +977,7 @@ form label {
   #fh5co-couple-story,
   #fh5co-couple,
   #fh5co-gallery,
+  #fh5co-faq,
   .fh5co-section {
     padding: 3em 0;
   }
@@ -1204,9 +1206,22 @@ form label {
   color: var(--primaryPurple);
   font-family: "apricots", Arial, serif;
 }
+
+.fh5co-heading h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  font-weight: bold;
+  color: var(--primaryPurple);
+}
+
 @media screen and (max-width: 768px) {
   .fh5co-heading h2 {
     font-size: 40px;
+  }
+
+  .fh5co-heading h3 {
+    font-size: 20px;
   }
 }
 .fh5co-heading p {
