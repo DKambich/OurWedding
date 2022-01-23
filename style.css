@@ -882,7 +882,7 @@ form label {
 #fh5co-header .display-tc .btn,
 .fh5co-cover .display-tc .btn {
   padding: 15px 20px;
-  background: #FFFFFF33;
+  background: #ffffff88;
   color: var(--primaryPurple);
   border: none !important;
   font-size: 14px;
@@ -939,7 +939,7 @@ form label {
 .simply-countdown > .simply-section .simply-amount,
 .simply-countdown > .simply-section .simply-word {
   display: block;
-  color: #FFFFFFBB;
+  color: #ffffffbb;
   /* amounts and words */
 }
 
@@ -1067,30 +1067,6 @@ form label {
   background-color: white;
   margin: 0 8px 0 8px;
   border-radius: 25%;
-}
-
-.heart {
-  position: absolute;
-  top: 4em;
-  left: 0;
-  right: 0;
-  z-index: 99;
-  animation: pulse 1s ease infinite;
-}
-.heart i {
-  font-size: 20px;
-  background: #fff;
-  padding: 20px;
-  color: var(--primaryPurple);
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  border-radius: 50%;
-}
-@media screen and (max-width: 768px) {
-  .heart {
-    display: none;
-  }
 }
 
 .couple-half {
@@ -2003,6 +1979,51 @@ form label {
   font-style: italic;
 }
 
+/* Bride and Groom CSS */
+
+.bridegroom-photo-ctr {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+  margin-bottom: 20px;
+}
+
+.bridegroom-photo-ctr h3 {
+  font-family: "apricots", Arial, serif;
+  color: var(--primaryPurple);
+  font-size: 30px;
+}
+
+.bridegroom-photo-ctr > img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.heart {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 60px;
+  z-index: 99;
+  animation: pulse 1s ease infinite;
+}
+.heart i {
+  font-size: 20px;
+  background: #fefefe;
+  padding: 12px;
+  box-shadow: 0px 0px 5px gray;
+  color: var(--primaryPurple);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+
 /* Bridesmaid CSS */
 
 .desc-bridemaid h3 {
@@ -2021,7 +2042,6 @@ form label {
 .bridesmaid-photo-ctr {
   display: flex;
   justify-content: end;
-
   align-items: center;
 }
 
@@ -2041,7 +2061,7 @@ form label {
 /* Groomsmen CSS */
 
 @media screen and (max-width: 768px) {
-  .hide-mobile{
+  .hide-mobile {
     display: none;
   }
 }
@@ -2051,7 +2071,7 @@ form label {
 }
 
 @media screen and (max-width: 768px) {
-  .hide-desktop{
+  .hide-desktop {
     display: block;
   }
 }
