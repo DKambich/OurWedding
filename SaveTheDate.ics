@@ -1,0 +1,11 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:Abigail and Daniel's Wedding\nDate - Sep 17\, 2022\nVenue - Anderson\, IN\nJoin us for our wedding\n
+DTSTART:20220917
+DTEND:20220918
+LOCATION:Anderson, IN
+SUMMARY;LANGUAGE=en-us:Abigail and Daniel's Wedding
+END:VEVENT
+END:VCALENDAR
