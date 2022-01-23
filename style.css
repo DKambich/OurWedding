@@ -11,21 +11,16 @@
 
 @font-face {
   font-family: "apricots";
-  src: url("fonts/apricots/apricots.woff") format("woff")
-    url("fonts/apricots/apricots.ttf") format("truetype");
-
+  src: url("fonts/apricots/apricots.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "quicksand";
-  src: url("fonts/apricots/quicksand.woff") format("woff"),
-    url("fonts/apricots/quicksand.ttf") format("truetype");
+  src: url("fonts/apricots/quicksand.woff") format("woff");
   font-weight: normal;
   font-style: normal;
-  font-weight: 900;
-  font-style: italic;
 }
 /* =======================================================
 *
