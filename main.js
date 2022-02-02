@@ -259,6 +259,12 @@
         });
       });
     });
+
+    // $("#code").on("input", function () {
+    //   this.value = this.value.replace(/[^0-9\.]/g, "");
+
+    //   const code = this.value;
+    // });
   };
 
   // Activate the parallax effect with Stellar (add data-stellar-background-ratio="#.#" on a div to use effect)
