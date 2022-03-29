@@ -2167,3 +2167,16 @@ form label {
     justify-content: center;
   }
 }
+
+.registry-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 35px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  transition: scale 0.4s ease-out;
+  margin: 0 0 24px 0;
+}
+
+.registry-image:hover {
+  scale: 1.1;
+}
