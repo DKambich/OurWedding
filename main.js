@@ -1,5 +1,13 @@
+if (window.document.documentMode) {
+  alert(
+    "You are using an unsupported web browser. Please use a browser such as Google Chrome, Microsoft Edge, or Mozilla Firefox"
+  );
+}
+
 (function () {
   "use strict";
+
+  var guestJSON;
 
   var mobileMenuOutsideClick = function () {
     $(document).click(function (e) {
@@ -213,58 +221,147 @@
   };
 
   const setupRSVPForm = function () {
-    function renumberGuests() {
-      $("#guest-list>div").each(function (index, child) {
-        // Set the correct guest number
-        const number = index + 2;
-        // Update the id of the guest container
-        $(child).prop("id", `guest-${number}-ctr`);
-        // Get the container children
-        const ctrChildren = $(child).children();
-        // Update the label of the field
-        $(ctrChildren[0]).innerHTML = `Guest #${number}`;
-        // Update the text and id of the textbox
-        $(ctrChildren[1]).prop("placeholder", `Guest #${number}`);
-        $(ctrChildren[1]).prop("id", `guest-${number}`);
-        // Update the id of the button
-        $(ctrChildren[2]).prop("id", `guest-${number}-btn`);
-      });
-    }
-
-    $("#add-guest").on("click", function () {
-      // Get the number of guests currently added
-      const numberGuests = $("#guest-list").children().length + 2;
-
-      // Add a new guest form field
-      $("#guest-list").append(
-        `
-      <div id="guest-${numberGuests}-ctr" class="guest-field-ctr ">
-        <label for="email" class="sr-only">Guest #${numberGuests}</label>
-        <input type="name" class="form-control guest-field" id="guest-${numberGuests}" placeholder="Guest #${numberGuests}">
-        <div id="guest-${numberGuests}-btn" class="remove-guest">
-          <i class="icon-minus"></i>
-        </div>
-      </div>`
-      );
-
-      // Transition the guest field in
-      $("#guest-list").children().last().hide().slideDown();
-
-      // Remove the form field when clicking on the button
-      $(`#guest-${numberGuests}-btn`).on("click", function (event) {
-        const parent = $(event.currentTarget).parent();
-        parent.slideUp(400, function () {
-          parent.remove();
-          renumberGuests();
-        });
-      });
+    // Load RSVP GUest JSON
+    $.getJSON("./guest.json", function (data) {
+      guestJSON = data;
     });
 
-    // $("#code").on("input", function () {
-    //   this.value = this.value.replace(/[^0-9\.]/g, "");
+    // Hide the RSVP submit button
+    $("#rsvp-submit").hide();
 
-    //   const code = this.value;
-    // });
+    // Setup an RSVP button click handler
+    $("#rsvp-submit").on("click", function () {
+      // Create a list of the guest responses
+      var guestResponses = [];
+
+      // For each guest response in the form
+      $("#guest-list")
+        .children("div")
+        .each(function (index, element) {
+          // Retrieve the guest name and their response
+          const guestName = $(`#guest-${index}`).val();
+          const response = $(`input[name="guest-${index}"]:checked`).val();
+
+          // Add the response to the list of guest responses
+          guestResponses.push({ guest: guestName, response: response });
+        });
+
+      const stringResponse = JSON.stringify(guestResponses);
+
+      // Add the guest response list stringified to a hidden field
+      $("#RSVP-response").val(stringResponse);
+
+      const invitationCode = $("#code").val();
+      const primaryEmail = $("#email").val();
+      const timestamp = new Date().toUTCString();
+
+      // Submit the RSVP form
+      $("#RSVP-form").submit();
+
+      // Submit the Backup form
+      fetch(
+        `https://getpantry.cloud/apiv1/pantry/8f3cb133-12cc-48be-b7ec-a7083ef5368d/basket/${invitationCode}`,
+        {
+          method: "put",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+
+          //make sure to serialize your JSON body
+          body: JSON.stringify({
+            [timestamp]: {
+              primaryEmail: primaryEmail,
+              response: stringResponse,
+            },
+          }),
+        }
+      );
+
+      // Show the confirmation popup
+      $.magnificPopup.open({
+        items: {
+          src: `#rsvp-popup`, // can be a HTML string, jQuery object, or CSS selector
+          type: "inline",
+        },
+        removalDelay: 500, //delay removal by X to allow out-animation
+        callbacks: {
+          beforeOpen: function () {
+            this.st.mainClass = "mfp-zoom-in"; //TODO: This is the animation class that is defined
+          },
+        },
+      });
+
+      // Animate the populated guest list out
+      $("#guest-list").slideUp().empty();
+      // Fade the RSVP submit button out
+      $("#rsvp-submit").hide();
+      // Animate a scroll to the top of the RSVP section
+      $("html, body").animate(
+        {
+          scrollTop: $(`#fh5co-started`).offset().top,
+        },
+        "easeInOutExpo"
+      );
+    });
+
+    // Setup an RSVP invitation code input handler
+    $("#code").on("input", function () {
+      // Get the guests corresponding to the inputted code
+      const guests = guestJSON[this.value];
+      // If the guests exist
+      if (guests !== undefined) {
+        // Add the RSVP info paragraph
+        $("#guest-list").append(
+          `<p style="color: #FFFC; text-align: center;" class="col-xs-12">Please mark accept or decline for each member of your party. If you are invited with a guest, please enter their name where indicated. If your guest is not able to attend, leave their spot blank and mark it as declined.</p>`
+        );
+
+        // Add a row on the form for each guest
+        for (const index in guests) {
+          $("#guest-list").append(`
+        	  <div>
+						  <div class="col-md-8 col-sm-8 col-xs-12">
+								<div class="form-group">
+									<label for=" name" class="sr-only"></label>
+									<input type="name" class="form-control" id="guest-${index}" placeholder="Enter Your Guest's Name" value="${guests[index]}">
+								</div>
+							</div>
+								
+              <div class="col-md-2 col-sm-2 col-xs-6">
+								<div class="rsvp-radio">
+									<input id="guest-accept-${index}" name="guest-${index}" type="radio" value="accept" checked>
+									<label for="guest-accept-${index}" class="radio-label">Accept</label>
+								</div>
+							</div>
+								
+              <div class="col-md-2 col-sm-2 col-xs-6">
+								<div class="rsvp-radio ">
+									<input id="guest-decline-${index}" name="guest-${index}" type="radio" value="decline">
+									<label for="guest-decline-${index}" class="radio-label">Decline</label>
+							</div>							
+            </div>
+          `);
+        }
+
+        // Animate the populated guest list in
+        $("#guest-list").hide().slideDown();
+        // Fade the RSVP submit button in
+        $("#rsvp-submit").fadeIn(1000);
+        // Animate a scroll to the top of the RSVP section
+        $("html, body").animate(
+          {
+            scrollTop: $(`#fh5co-started`).offset().top,
+          },
+          "easeInOutExpo"
+        );
+      } else {
+        // If there is no corresponding guest
+        // Animate the guest list out
+        $("#guest-list").slideUp().empty();
+        // Fade the RSVP submit button out
+        $("#rsvp-submit").hide();
+      }
+    });
   };
 
   // Activate the parallax effect with Stellar (add data-stellar-background-ratio="#.#" on a div to use effect)
