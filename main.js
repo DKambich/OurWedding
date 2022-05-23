@@ -1,12 +1,6 @@
-if (window.document.documentMode) {
-  alert(
-    "You are using an unsupported web browser. Please use a browser such as Google Chrome, Microsoft Edge, or Mozilla Firefox"
-  );
-}
-
 (function () {
   "use strict";
-  
+
   var guestJSON;
 
   var mobileMenuOutsideClick = function () {
