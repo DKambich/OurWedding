@@ -30,6 +30,10 @@
 
 :root {
   --primaryPurple: #492c45;
+  --primaryPurpleEighty: #492c45cc;
+  --primaryPurpleFifty: #492c4580;
+  --primaryPurpleTen: #492c451a;
+
   --secondaryPurple: #d0c3f1;
   --white: #ffffff;
 }
@@ -389,11 +393,6 @@ figure {
   }
 }
 
-#fh5co-event {
-  height: 1100px;
-  float: left;
-}
-
 #fh5co-event .display-t,
 #fh5co-event .display-tc {
   height: 700px;
@@ -401,10 +400,10 @@ figure {
   width: 100%;
 }
 #fh5co-event .fh5co-heading h2 {
-  color: #fff;
+  color: var(--primaryPurple);
 }
 #fh5co-event .fh5co-heading span {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--primaryPurpleFifty);
   text-transform: uppercase;
   font-size: 13px;
   letter-spacing: 2px;
@@ -431,8 +430,7 @@ figure {
 #fh5co-event .event-wrap {
   display: flex;
   align-items: center;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(0, 0, 0, 0.15);
   padding: 30px;
   width: 100%;
   -webkit-border-radius: 4px;
@@ -450,16 +448,16 @@ figure {
   flex: 1;
   padding: 4px 8px 4px 0;
   margin-right: 12px;
-  color: white;
-  border-right: 1px solid rgba(255, 255, 255, 0.5);
+  color: var(--primaryPurple);
+  border-right: 1px solid rgba(0, 0, 0, 0.15);
   padding-bottom: 0;
   margin-bottom: 0;
 }
 
 #fh5co-event .event-wrap h3 {
   font-size: 20px;
-  color: #fff;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  color: var(--primaryPurple);
+  border-bottom: 1px solid var(--primaryPurpleFifty);
   display: block;
   padding-bottom: 20px;
   text-transform: uppercase;
@@ -468,11 +466,11 @@ figure {
 #fh5co-event .event-wrap p,
 #fh5co-event .event-wrap span {
   display: block;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--primaryPurpleEighty);
 }
 #fh5co-event .event-wrap i {
-  color: white;
-  font-size: 20px;
+  color: var(--primaryPurple);
+  /* font-size: 20px; */
 }
 #fh5co-event .event-wrap .event-col {
   width: 50%;
@@ -486,22 +484,22 @@ figure {
 }
 
 #fh5co-event .event-wrap-details h4 {
-  color: white;
+  color: var(--primaryPurple);
   margin-bottom: 0;
 }
 
 #fh5co-event .event-wrap-details p {
   margin-bottom: 0;
   text-align: left;
-  color: white;
+  color: var(--primaryPurple);
 }
 
 #fh5co-event .event-wrap-details a:hover {
-  color: rgba(255, 255, 255, 1);
+  color: var(--primaryPurple);
 }
 
 #fh5co-event .event-wrap-details a {
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--primaryPurple);
   text-decoration: underline;
 }
 
@@ -1418,7 +1416,7 @@ form label {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
 }
 #fh5co-started .fh5co-heading h2 {
   color: #fff;
