@@ -262,14 +262,6 @@ figure {
   color: #fff !important;
 }
 
-#fh5co-event,
-.fh5co-bg {
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
-  position: relative;
-}
-
 .fh5co-bg {
   background-position: center center;
   width: 100%;
