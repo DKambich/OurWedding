@@ -376,4 +376,6 @@
     setupDateCounter();
     setupRSVPForm();
   });
+
+  $("#fh5co-event").hide().show();
 })();
