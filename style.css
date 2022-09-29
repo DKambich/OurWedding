@@ -2231,3 +2231,10 @@ form label {
   margin: 0;
   padding: 0;
 }
+
+.wedding-video {
+  border-radius: 7px;
+  aspect-ratio: 16/9;
+  width: 100%;
+  height: auto;
+}
