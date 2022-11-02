@@ -2233,8 +2233,20 @@ form label {
 }
 
 .wedding-video {
+  position: relative;
   border-radius: 7px;
   aspect-ratio: 16/9;
   width: 100%;
   height: auto;
+}
+
+.playButton {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px 0 20px 36px;
+  border-color: transparent transparent transparent #fffE;
+  position: absolute;
+  top: calc(50% - 20px);
+  left: calc(50% - 18px);
 }
